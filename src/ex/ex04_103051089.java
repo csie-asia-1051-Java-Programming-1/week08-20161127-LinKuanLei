@@ -15,64 +15,69 @@ public class ex04_103051089 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("要做何種計算?(+,-,*,/,pow2,pow3,root)");
 		String str = sc.nextLine();
+		Counter count= new Counter();
 		float a = 0, b=0;
 		switch(str){
 			case "+" :
 				a=sc.nextFloat();
 				b=sc.nextFloat();
-				System.out.println( Counter .cha( a , b ));
+				System.out.println( count .cha( a , b ));
 				break;
 			case "-" :
 				a=sc.nextFloat();
 				b=sc.nextFloat();
-				System.out.println( Counter .chin( a , b ));
+				System.out.println( count.chin( a , b ));
 				break;
 			case "*" :
 				a=sc.nextFloat();
 				b=sc.nextFloat();
-				System.out.println( Counter .chan( a , b ));
+				System.out.println( count.chan( a , b ));
 				break;
 			case "/" :
 				a=sc.nextFloat();
 				b=sc.nextFloat();
-				System.out.println( Counter .chuu( a , b ));
+				System.out.println( count.chuu( a , b ));
 				break;
 			case "pow2" :
 				a=sc.nextFloat();
-				System.out.println( Counter .pow2( a ));
+				System.out.println( count.pow2( a ));
 				break;
 			case "pow3" :
 				a=sc.nextFloat();
-				System.out.println( Counter .pow3( a ));
+				System.out.println( count.pow3( a ));
 				break;
 			case "root" :
 				a=sc.nextFloat();				
-				System.out.println( Counter .root( a ));
+				System.out.println( count.root( a ));
+				break;
+			default :
+				System.out.println("Error");
 				break;
 		}
 	}
 
 }
 class Counter{
-	public static float cha(float a,float b){
+	public Counter(){ 	}
+	public float cha(float a,float b){
 		return a+b;
 	}
-	public static float chin(float a,float b){
+	public  float chin(float a,float b){
 		return a-b;
 	}
-	public static float chan(float a,float b){
+	public float chan(float a,float b){
 		return a*b;
 	}
-	public static float chuu(float a,float b){
+	public float chuu(float a,float b){
 		return a/b;
 	}
-	public static float pow2(float a){
+	public float pow2(float a){
 		return a*a;
 	}
-	public static float pow3(float a){
+	public float pow3(float a){
 		return a*a*a;
 	}
-	public static float root(float a){
+	public float root(float a){
 		return (float)Math.sqrt(a);
 	}
 }
