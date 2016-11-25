@@ -1,15 +1,43 @@
 package hw;
 /*
- * Topic: è«‹å¯«ä»¥é?åˆ¥?–¹å¼å¯«ä¸??‹ç?‹å?å¯é¡¯ç¤º??›ä?æ•¸å­—ç?? LED ??ˆä?çµ„ï?Œå¯? ¹??šè¼¸?…¥??„å?›ä?æ•¸å­—é¡¯ç¤ºæ•¸å­—ã?‚æ?”å?‚èªªï¼? ?”±?µ?›¤è¼¸å…¥ 1234 ï¼Œå?‡å¯?œ¨?¢å¹•ä?Šé¡¯ç¤ºå?‚å??
+ * Topic: è«‹å¯«ä»¥é¡åˆ¥æ–¹å¼å¯«ä¸€å€‹ç¨‹å¼å¯é¡¯ç¤ºå››ä½æ•¸å­—çš„ LED ç‡ˆä¸€çµ„ï¼Œå¯æ ¹æ“šè¼¸å…¥çš„å››ä½æ•¸å­—é¡¯ç¤ºæ•¸å­—ã€‚æ¯”å¦‚èªªï¼Œ ç”±éµç›¤è¼¸å…¥ 1234 ï¼Œå‰‡å¯åœ¨è¢å¹•ä¸Šé¡¯ç¤º
  * Date: 2016/11/21
- * Author: 1050210XX ?‘¨æ°¸æŒ¯?å¸«
+ * Author: 103051089 æ—å† ç£Š
  */
 
+import java.util.Scanner;
 public class hw04_103051089 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		LED led = new LED();
+		Scanner sc = new Scanner(System.in);
+		led.setNum(sc.nextInt());
+		led.showNum();
 	}
 
+}
+class LED{
+	private int num,a=0,b=0,c=0,d=0;
+	private String[] line1 = {"	*****	",	"	*	",	"	*****	",	"	*****	",	"	*     *	",	"	*****	",	"	*****	",	"	*****	",	"	*****	",	"	*****	"};	
+	private String[] line2 = {"	*     *	",	"	*	",	"	       *	",	"	       *	",	"	*     *	",	"	*       	",	"	*       	",	"	*     *	",	"	*     *	",	"	*     *	"};	
+	private String[] line3 = {"	*     *	",	"	*	",	"	*****	",	"	*****	",	"	*****	",	"	*****	",	"	*****	",	"	       *	",	"	*****	",	"	*****	"};	
+	private String[] line4 = {"	*     *	",	"	*	",	"	*       	",	"	       *	",	"	       *	",	"	       *	",	"	*     *	",	"	       *	",	"	*     *	",	"	       *	"};	
+	private String[] line5 = {"	*****	",	"	*	",	"	*****	",	"	*****	",	"	       *	",	"	*****	",	"	*****	",	"	       *	",	"	*****	",	"	*****	"};	
+	public LED() {		
+	}
+	public void setNum(int x){
+		num = x;
+		a = x/1000;
+		b= (x%1000)/100;
+		c= (x%100)/10;
+		d = x%10;
+	}
+	public void showNum(){
+		System.out.println(line1[a]+line1[b]+line1[c]+line1[d]);
+		System.out.println(line2[a]+line2[b]+line2[c]+line2[d]);
+		System.out.println(line3[a]+line3[b]+line3[c]+line3[d]);
+		System.out.println(line4[a]+line4[b]+line4[c]+line4[d]);
+		System.out.println(line5[a]+line5[b]+line5[c]+line5[d]);
+	}
 }
