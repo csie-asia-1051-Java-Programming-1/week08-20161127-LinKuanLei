@@ -1,14 +1,23 @@
 package hw;
+import java.util.Scanner;
 /*
- * Topic: è«‹å¯«ä¸??? ??è¿´?‡½å¼?)?²è?Œå?é?²åˆ¶?•¸å­—è?‰æ?›æ?ä?Œé?²åˆ¶?•¸å­—ï?Œä?‹å?‚å?é?²åˆ¶??? 13 ??ƒè¼¸?‡ºäºŒé?²åˆ¶??? 1101
+ * Topic: è«‹å¯«ä¸€å€‹ éè¿´å‡½å¼)é€²è¡Œåé€²åˆ¶æ•¸å­—è½‰æ›æˆäºŒé€²åˆ¶æ•¸å­—ï¼Œä¾‹å¦‚åé€²åˆ¶çš„ 13 æœƒè¼¸å‡ºäºŒé€²åˆ¶çš„ 1101
  * Date: 2016/11/21
- * Author: 1050210XX ?‘¨æ°¸æŒ¯?å¸«
+ * Author: 103051089 æ—å† ç£Š
  */
 public class hw01_103051089 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Scanner sc = new Scanner(System.in);
+		int in = sc.nextInt();
+		System.out.println(DecToBin(in));
 	}
-
+	public static String DecToBin(int a) {
+		if(a==0){
+			return "";
+		}else{			
+			return DecToBin(a/2)+String.valueOf(a%2);
+		}		
+	}
 }
