@@ -1,14 +1,37 @@
 package hw;
+
+import java.util.Scanner;
+
 /*
- * Topic: è«‹å¯«ä¸??‹é?è¿´ç¨‹å?ï?Œè¼¸?…¥ä¸??? int ??‹æ?‹ç?„è?‡æ?™ï?Œä¸¦??å‚³è©²è?‡æ?™åœ¨äºŒé?²åˆ¶ä¸‹æ?‰å?šå?‘å?‹ä?å?ƒæ˜¯ 1ï¼Œä?‹å??: è¼¸å…¥ 13 å¾—åˆ°çµæ?œç‚º 3
+ * Topic: è«‹å¯«ä¸€å€‹éè¿´ç¨‹å¼ï¼Œè¼¸å…¥ä¸€å€‹ int å‹æ…‹çš„è³‡æ–™ï¼Œä¸¦å›å‚³è©²è³‡æ–™åœ¨äºŒé€²åˆ¶ä¸‹æœ‰å¤šå°‘å€‹ä½å…ƒæ˜¯ 1ï¼Œä¾‹å¦‚: è¼¸å…¥ 13 å¾—åˆ°çµæœç‚º 3
  * Date: 2016/11/21
- * Author: 1050210XX ?‘¨æ°¸æŒ¯?å¸«
+ * Author: 103051089 æ—å† ç£Š
  */
 public class hw03_103051089 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Scanner sc = new Scanner(System.in);
+		int in = sc.nextInt();
+		System.out.println(DecToBin(in));
+		System.out.println(StrCheck(DecToBin(in)));
 	}
+	public static String DecToBin(int a) {
+		if(a==0){
+			return "";
+		}else{			
+			return DecToBin(a/2)+String.valueOf(a%2);
+		}		
+	}
+	public  static int StrCheck(String a) {
 
+		if(a.equals("")){		
+			return 0 ;
+		}else if(a.substring(0,1).equals("1")){
+			return 1+StrCheck(a.substring(1));
+		}else{
+			return StrCheck(a.substring(1));
+		}
+		
+	}
 }
